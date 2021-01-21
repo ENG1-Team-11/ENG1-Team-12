@@ -130,3 +130,9 @@ body {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+.simplelink {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}

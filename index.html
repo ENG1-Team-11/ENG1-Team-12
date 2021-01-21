@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dragon Boat Racing 2020 by Team 100</title>
+        <title>Dragon Boat Racing by Team 12 and Team 11</title>
         <meta charset="utf-8" />
         <link rel="icon" href= />
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link href="styles.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#reqbtn").click(function(){
+              $("#req").load("content.html");
+            });
+          });
+          $("#req").load("content.html");
+        </script>
     </head>
     <body>
 
@@ -17,21 +25,23 @@
             <img src="images/new_logo_t.png" alt="Team 100 Logo" id="logo" />
 
             <div id="top-info">
-                ENG1 Cohort 2 Team 12 Project Website
+                ENG1 Cohort 2 Team 12 and Team 11
             </div>
         </div>
-       
+
         <div class="nav">
             <ul>
-                <li class="navlinks active" id="docbtn">Docs</li>
-                <li class="navlinks" id="picbtn">Snapshots of Plan</li>
+                <li class="navlinks active" id="docbtn">Assessment 1</li>
+                <li class="navlinks active" id="docbtn2">Assessment 2</li>
             </ul>
         </div>
 
         <div class="main">
 
+          <!-- ASSESSMENT 1 DOCUMENTS -->
+
             <div class="section" id="docs">
-            
+
                 <h4>Requirements</h4>
                 <ul>
                     <li><a href="Documentation/Req1.pdf">Requirements Document</a></li>
@@ -45,6 +55,7 @@
                 <h4>Method</h4>
                 <ul>
                     <li><a href="Documentation/Plan1.pdf">Method Selection & Planning Document</a></li>
+                    <li><a id="picbtn" class="simplelink">Snapshots of Plan</a></li>
                 </ul>
 
                 <h4>Risk Assessment</h4>
@@ -61,45 +72,136 @@
                 <ul>
                     <li><a href="https://github.com/wpw503/ENG1-Team-12/releases/download/0.0.4/PixelBoat-0.0.4.jar">The Game</a></li>
                 </ul>
-                
+
                 <h4>Releases and Full Project ZIP</h4>
                 <ul>
                     <li><a href="https://github.com/wpw503/ENG1-Team-12/releases">All Releases</a></li>
                     <li><a href="https://github.com/wpw503/ENG1-Team-12/raw/main/Team100.zip">ZIP</a></li>
                 </ul>
-                
+
                 <h4>Java Doc</h4>
                 <ul>
                     <li><a href="docs/index.html">Java Doc</a></li>
                 </ul>
-                
+
             </div>
+
+            <!-- ASSESSMENT 2 DOCUMENTS -->
+
+            <div class="section" id="docs2">
+
+              <h4>Change Report</h4>
+              <ul>
+                  <li><a id="chngbtn" class="simplelink">Change report</a></li>
+                  <li><a href="Documentation2/Change2.pdf">Download PDF file</a></li>
+              </ul>
+
+              <h4>Implementation</h4>
+              <ul>
+                  <li><a id="impbtn" class="simplelink">Implementation</a></li>
+                  <li><a href="Documentation2/Impl2.pdf">Download PDF file</a></li>
+              </ul>
+
+              <h4>Testing</h4>
+              <ul>
+                  <li><a id="testbtn" class="simplelink">Software Testing Report</a></li>
+                  <li><a href="Documentation2/Test2.pdf">Download PDF file</a></li>
+              </ul>
+
+              <h4>Continuous Integration</h4>
+              <ul>
+                  <li><a id="cibtn" class="simplelink">Continuous Integration Report</a></li>
+                  <li><a href="Documentation2/CI2.pdf">Download PDF file</a></li>
+              </ul>
+
+                <h4>Requirements - <span style="color:#bf2e02">updated</span></h4>
+                <ul>
+                    <li><a id="reqbtn" class="simplelink">Requirements</a></li>
+                    <li><a href="Documentation2/Req1-edited.pdf">Download PDF file</a></li>
+                </ul>
+
+                <h4>Architecture - <span style="color:#bf2e02">updated</a></h4>
+                <ul>
+                    <li><a id="archbtn" class="simplelink">Architecture</a></li>
+                    <li><a href="Documentation2/Arch1-edited.pdf">Download PDF file</a></li>
+                </ul>
+
+                <h4>Method Selection and Planning - <span style="color:#bf2e02">updated</span></h4>
+                <ul>
+                    <li><a id="planbtn" class="simplelink">Method Selection & Planning</a></li>
+                    <li><a href="Documentation2/Plan1-edited.pdf">Download PDF file</a></li>
+                    <li><a id="picbtn2" class="simplelink">Weekly Snapshots</a></li>
+                </ul>
+
+                <h4>Risk Assessment and Mitigation - <span style="color:#bf2e02">updated</span></h4>
+                <ul>
+                    <li><a id="riskbtn" class="simplelink">Risk Assessment and Mitigation</a></li>
+                    <li><a href="Documentation2/Risk1-edited.pdf">Download PDF file</a></li>
+                </ul>
+
+                <h4>Executables</h4>
+                <ul>
+                    <li><a href="?">The Game</a></li>
+                </ul>
+
+                <h4>Releases and Full Project ZIP</h4>
+                <ul>
+                    <li><a href="?">All Releases</a></li>
+                    <li><a href="?">ZIP</a></li>
+                </ul>
+
+                <h4>Java Doc</h4>
+                <ul>
+                    <li><a href="?">Java Doc</a></li>
+                </ul>
+
+            </div>
+
+            <!-- TEAM 11 CONTENT -->
+
+            <!-- Requirements -->
+            <div class="section" id="req">
+
+            </div>
+            <div class="section" id="arch"></div>
+            <div class="section" id="plan"></div>
+            <div class="section" id="risk"></div>
+            <div class="section" id="imp"></div>
+            <div class="section" id="chng"></div>
+            <div class="section" id="ci"></div>
+            <div class="section" id="test"></div>
+
+            <!-- TEAM 12 SNAPHOTS -->
 
             <div class="section" id="pics">
                 <h4>Week 1</h4>
-                
+
                 <img src="images/week1.png" alt="Week 1 Gantt Chart" class="gantt" />
-                
+
                 <h4>Week 2 & 3</h4>
-                
+
                 <img src="images/week2.png" alt="Week 2/3 Gantt Chart" class="gantt" />
-                
+
                 <h4>Week 4</h4>
-                
+
                 <img src="images/week4.png" alt="Week 4 Gantt Chart" class="gantt" />
-                
+
                 <h4>Week 5 & 6</h4>
-                
+
                 <img src="images/week5or6.png" alt="Week 5/6 Gantt Chart" class="gantt" />
-                
+
                 <h4>Week 7</h4>
-                
+
                 <img src="images/week7.png" alt="Week 7 Gantt Chart" class="gantt" />
-                
+
                 <h4>Week 8</h4>
-                
+
                 <img src="images/week8.png" alt="Week 8 Gantt Chart" class="gantt" />
             </div>
+
+            <!-- TEAM 11 SNAPHOTS -->
+
+            <div class="section" id="pics2"></div>
 
         </div>
 
