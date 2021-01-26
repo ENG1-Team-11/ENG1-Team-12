@@ -61,7 +61,7 @@ University of York Engineering 1 Cohort 2 Team 12:
 
 University of York Engineering 1 Cohort 2 Team 11:
 
-* [@AlexGarrity](https://github.com/AlexGarrityr)
+* [@AlexGarrity](https://github.com/AlexGarrity)
 * [@KarinaStrogonova](https://github.com/kr337)
 * [@SamJones](https://github.com/FallenNocturne)
 * [@SamHughes](https://github.com/OTM-options)
