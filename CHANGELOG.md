@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.1] - 26-01-2021
 ### Changed
 Deliverables:
-- added new user requirements: UR_LEVEL, UR_SAVE and UR_POWER_UP
+- added new user requirements: UR_LEVELS, UR_SAVE and UR_POWER_UP
 
 <br><hr>
 
