@@ -1,13 +1,41 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 27-01-2021
+### Added
+Deliverables:
+- new risks (+mitigation, owners) in Risk1 document
+- updated Change Report
+
+### Changed
+- risk ID format in Risks table in Risk1 document
+- risk owners
+- Introduction to Risk Format and Level of Detail section in Risk1
+
+### Removed
+- Backup Owner column of Risks table in Risk1 document
 
 <br><hr>
 
 ## [2.0.1] - 26-01-2021
+### Added
+Deliverables:
+- updated Req1 document, added new user requirements: UR_LEVELS, UR_SAVE and UR_POWER_UP (+risk, alternatives, assumptions)
+- added new functional requirement to the table
+- added new new tools, team management approach and other info to Plan1 document
+- created a new Gantt Chart
+- created Requirements sheet
+- justification and alternatives to some of the tools in Plan1
+- updated Change Report
+
 ### Changed
 Deliverables:
-- added new user requirements: UR_LEVELS, UR_SAVE and UR_POWER_UP
+- changed abstract architecture, added new entity PowerUpPack
+- changed Plan Strategy, Team Organisation Approach and overall structure of Plan1 document
+
+### Removed
+Deliverables:
+- deleted Key Event List and Announcements sections from Plan1 document
 
 <br><hr>
 
