@@ -8,11 +8,13 @@ Deliverables:
 - updated Change Report
 
 ### Changed
+Deliverables:
 - risk ID format in Risks table in Risk1 document
 - risk owners
 - Introduction to Risk Format and Level of Detail section in Risk1
 
 ### Removed
+Deliverables:
 - Backup Owner column of Risks table in Risk1 document
 
 <br><hr>
