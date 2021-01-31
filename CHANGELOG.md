@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<br><hr>
+
+## [2.0.3] - 31-01-2021
+### Changed
+Codebase:
+- Added difficulty selection in the options menu
+- Further tweaked Boat AI to improve boat performance
+- Updated movement functions to use deltaTime rather than relying on the game running at 60 frames per second
+- Added a more robust UI system.  Converted start menu and options to use it
+- Tweaked boat stats slightly
+- Added function-level comments to catch up on documentation debt
+- Restructured assets folder
+
+Repo:
+- Updated Implementation to latest version on master branch
 
 <br><hr>
 
