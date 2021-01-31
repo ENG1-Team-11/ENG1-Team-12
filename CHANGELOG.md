@@ -33,6 +33,46 @@ Repo:
 
 <br><hr>
 
+## [2.0.1] - 27-01-2021
+### Added
+Deliverables:
+- new risks (+mitigation, owners) in Risk1 document
+- updated Change Report
+
+### Changed
+Deliverables:
+- risk ID format in Risks table in Risk1 document
+- risk owners
+- Introduction to Risk Format and Level of Detail section in Risk1
+
+### Removed
+Deliverables:
+- Backup Owner column of Risks table in Risk1 document
+
+<br><hr>
+
+## [2.0.1] - 26-01-2021
+### Added
+Deliverables:
+- updated Req1 document, added new user requirements: UR_LEVELS, UR_SAVE and UR_POWER_UP (+risk, alternatives, assumptions)
+- added new functional requirement to the table
+- added new new tools, team management approach and other info to Plan1 document
+- created a new Gantt Chart
+- created Requirements sheet
+- justification and alternatives to some of the tools in Plan1
+- updated Change Report
+
+### Changed
+Deliverables:
+- changed abstract architecture, added new entity PowerUpPack
+- changed Plan Strategy, Team Organisation Approach and overall structure of Plan1 document
+
+### Removed
+Deliverables:
+- deleted Key Event List and Announcements sections from Plan1 document
+
+<br><hr>
+
 ## [2.0.1] - 25-01-2021
 ### Changed
 Codebase:
@@ -67,6 +107,7 @@ Website:
 ## [Unreleased]
 
 <!-- Commit source tree links -->
+[2.0.3]: https://github.com/ENG1-Team-11/ENG1-Team-12-Implementation/tree/bceb8f5ab2445a0f05dedd75ab7a8a282b2a6aff
 [2.0.2]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/ecec61cbd3cee92f1823d56f530d768ecb813fd4
 [2.0.1]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/c645f195e18970556f9b6d68e353e12a454e3d93
 [2.0.0]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/66afcea8025ad0b71c6617bc653de1f5f76679a8
