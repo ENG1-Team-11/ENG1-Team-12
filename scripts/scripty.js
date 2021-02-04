@@ -12,28 +12,12 @@ $(window).on('load', function(){
         openInfo(event, 'pics')
     })
 
-    $('#picbtn2').on('click', function(){
-        openInfo(event, 'pics2')
+    $('#pic-test').on('click', function(){
+        openInfo(event, 'tests')
     })
 
     $('#linkbtn').on('click', function(){
         openInfo(event, 'links')
-    })
-
-    $('#reqbtn').on('click', function(){
-        openInfo(event, 'req')
-    })
-
-    $('#archbtn').on('click', function(){
-        openInfo(event, 'arch')
-    })
-
-    $('#planbtn').on('click', function(){
-        openInfo(event, 'plan')
-    })
-
-    $('#riskbtn').on('click', function(){
-        openInfo(event, 'risk')
     })
 
     $('#impbtn').on('click', function(){
