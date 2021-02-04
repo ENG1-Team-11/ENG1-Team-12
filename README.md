@@ -39,11 +39,11 @@ This repository contains documentation and Java code for the single player, Java
 
 ## Production
 
-### Assessment 1:
+#### Assessment 1:
 
 ![Gantt Chart](https://github.com/wpw503/ENG1-Team-12/blob/main/images/week8.png)
 
-### Assessment 2:
+#### Assessment 2:
 
 ![Gantt Chart2](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/images/assessment2/gantt.png)
 
