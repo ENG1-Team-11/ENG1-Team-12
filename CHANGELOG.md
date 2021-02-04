@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 <br><hr>
 
+## [2.0.3] - 04-02-2021
+### Added
+Website
+- updated content
+- added temporary documents
+
+</br></hr>
+
 ## [2.0.3] - 31-01-2021
 ### Changed
 Codebase:
