@@ -1,11 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-<br><hr>
-
 </br></hr>
 
-## [2.0.4] - 06-02-2021
+## [2.1.0] - 06-02-2021
 ### Changed
 Codebase:
 - Added save manager and game saving functionality
