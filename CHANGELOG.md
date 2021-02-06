@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 <br><hr>
 
+</br></hr>
+
+## [2.0.4] - 06-02-2021
+### Changed
+Codebase:
+- Added save manager and game saving functionality
+- Removed unused functions
+- Documented remaining undocumented code
+- Added assets to replace temporary assets
+- Now fulfills all user requirements, technically complete
+
+Repo:
+- Updated Implementation to latest version on master branch
+- Fixed link to source tree for version 2.0.3
+
+<br><hr>
+
 ## [2.0.3] - 04-02-2021
 ### Added
 Website
@@ -115,7 +132,8 @@ Website:
 ## [Unreleased]
 
 <!-- Commit source tree links -->
-[2.0.3]: https://github.com/ENG1-Team-11/ENG1-Team-12-Implementation/tree/bceb8f5ab2445a0f05dedd75ab7a8a282b2a6aff
+[2.0.4]: 
+[2.0.3]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/a22f71f0fec6ae774953c452349e6a0cfbf76e47
 [2.0.2]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/ecec61cbd3cee92f1823d56f530d768ecb813fd4
 [2.0.1]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/c645f195e18970556f9b6d68e353e12a454e3d93
 [2.0.0]: https://github.com/ENG1-Team-11/ENG1-Team-12/tree/66afcea8025ad0b71c6617bc653de1f5f76679a8
