@@ -31,10 +31,10 @@ This repository contains documentation and Java code for the single player, Java
 * [Implementation](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Impl2.pdf)
 * [Software Testing Report](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Test2.pdf)
 * [Continuous Integration Report](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/CI2.pdf)
-* [User Requirements](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Req1-edited.pdf)
-* [Architecture](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Arch1-edited.pdf)
-* [Method selection and planning](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Plan1-edited.pdf)
-* [Risk assessment and mitigation](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Risk1-edited.pdf)
+* [User Requirements](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Req1.pdf)
+* [Architecture](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Arch1.pdf)
+* [Method selection and planning](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Plan1.pdf)
+* [Risk assessment and mitigation](https://github.com/ENG1-Team-11/ENG1-Team-12/blob/main/Documentation2/Risk1.pdf)
 
 
 ## Production
