@@ -1,2 +1,7 @@
 com.teamonehundred.pixelboat
 com.teamonehundred.pixelboat.desktop
+com.teamonehundred.pixelboat.ui
+com.teamonehundred.pixelboat.util
+io.github.eng1team11.pixelboattests
+io.github.eng1team11.pixelboattests.ui
+io.github.eng1team11.pixelboattests.util
