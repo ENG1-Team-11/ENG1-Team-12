@@ -97,7 +97,8 @@
               <h4>Testing</h4>
               <ul>
                   <li><a id="testbtn" class="simplelink">Software Testing Report</a></li>
-                  <li><a id="pic-test" class="simplelink">Testing Material</a></li>
+                  <li><a href="Documentation2/test/index.html" target="_blank">Test Report</a></li>
+                  <li><a href="Documentation2/TestingMat.pdf" target="_blank">Testing Material PDF</a></li>
                   <li><a href="Documentation2/Test2.pdf" target="_blank">View PDF file</a></li>
               </ul>
 
@@ -129,6 +130,11 @@
                     <li><a href="Documentation2/Risk1.pdf" target="_blank">View PDF file</a></li>
                 </ul>
 
+                <h4>User Manual</h4>
+                <ul>
+                    <li><a href="Documentation2/Manual.pdf" target="_blank">View PDF file</a></li>
+                </ul>
+
                 <h4>Executables</h4>
                 <ul>
                     <li><a href="?">The Game</a></li>
@@ -158,32 +164,66 @@
               <h2>Difficulty</h2></br>
 
                 <p>UR_LEVELS refers to the new requirement that the game must allow players to choose between different levels of difficulty: Easy, Normal and Hard.</p>
-                <p>There are 3 different difficulty levels implemented into the game. They are Easy, Medium (Normal) and Hard. The difficulty you wish to play on can be
-                  selected in the settings screen on the main menu and then that difficulty is implemented when you start a game.</p>
-                <p>When changing between difficulty settings three values are changed to different values depending on the selected difficulty level. BOAT_TARGET_SPEED
-                  which represents the AI boat's maximum speed and is set to the lowest value when easy difficulty is selected, is increased for medium and is highest when
-                  hard difficulty is selected. OBSTACLE_COUNT which represents the number of obstacles that are spawned randomly throughout the map, this is set to the
-                  lowest value (50) when on easy and is increased on medium to (100) and set to the max value (200) when on hard. The final variable changed when altering
-                  difficulty is POWER_UP_COUNT, this represents the number of powerups spawned in a game and is set to its highest value when on easy and is subsequently
-                  decreased when increasing difficulty to medium and hard.</p>
-                <p>Values for this are stored in Difficulty.java but used where necessary, including in AIBoat.java, and BoatRace.java.</p></br>
+                <p>There are 3 different difficulty levels implemented into the game. They are Easy, Medium (Normal) and Hard. The difficulty you wish to play on
+                  can be selected in the settings screen on the main menu and then that difficulty is implemented when you start a game.</p>
+                <p>When changing between difficulty settings four values are changed to different values depending on the selected difficulty level.
+                  BOAT_TARGET_SPEED which represents the AI boat's maximum speed and is set to the lowest value of 0.80 when easy difficulty is selected, is
+                  increased for medium to 0.88 and is highest when hard difficulty is selected at 0.99. OBSTACLE_COUNT which represents the number of obstacles
+                  that are spawned randomly throughout the map, this is set to the lowest value of 50 when on easy and is increased on medium to 100 and set to the
+                  max value of 200 when on hard. LEG_OBSTACLE_MODIFIER which adds a modifier to the number of obstacles spawned per leg depending on difficulty, on
+                  easy up to 2x by the final leg, medium up to 3x by the final leg and on hard up to 4x by the final leg. The final variable changed when altering
+                  difficulty is POWER_UP_COUNT, this represents the number of powerups spawned in a game and is set to its highest value when on easy at 50 and is
+                  decreased to 25 for medium and hard difficulty.</p>
+                <p>Values for this are stored in Difficulty.java but used where necessary, including in AIBoat.java, and BoatRace.java. This implements the
+                  Difficulty class from the game architecture.</p></br>
 
                 <h2>Game Save</h2></br>
 
-                <p>UR_SAVE denotes the requirement to provide facilities that would allow players to save the state of the game at any point and resume the saved game later.</p></br>
+                <p>UR_SAVE denotes the requirement to provide facilities that would allow players to save the state of the game at any point and resume the saved game later.</p>
+                <p>The game can be saved and specific values are stored into a save file to record the required data about the race which can be loaded at a later
+                  time for the player to resume their game. The values saved are the current leg number that the player is on, the number of boats in the race
+                  currently, the spec of the boat that the player is using, the times for the previous legs of the player and the times of the previous legs for
+                  each ai boat.</p>
+                <p>In order to save the game data representing the current leg (stored as an integer), boat count (stored as an integer), players boat spec (stored
+                  as an integer), players leg times (stored as a list of integers) and AI leg times (stored as a list of a list of integers for each boat) are all
+                  collected and serialised so that they can be saved to a binary file. This file can be loaded and the data will be de-serialised so that the player
+                   can resume their race by loading in the saved values of each aspect of the race into the current game.</p>
+                <p>This is implemented in the SaveManager.java file and implements the SaveManager class from the game architecture. Data is saved to the state.sav
+                  file.</p></br>
 
                 <h2>Power-ups</h2></br>
 
-                <p>UR_POWER_UP is a new requirement to implement five power-up packs, which could be found floating down the river and be picked up by boats to improve some
-                  of their characteristics.</p>
-                <p>There are 5 unique power-ups implemented into the game, they are Repair (refills a portion of the players lost durability), Stamina (refills a portion of
-                  the players lost stamina), Boost (Gives the player a temporary speed boost), Time (reduces the time taken on the current leg) and Teleport ( jumps the
-                  player forward a set distance). When a boat collides with one of the powerups they collect it and its related effect is immediately applied to the player's
-                  boat. Each powerup has a unique look so that players can tell which powerup they are collecting.</p>
-                <p>Power-ups are implemented as an extension of the MovableObject class and their collision is implemented using the CollisionObject class. In this way
-                  power-ups act as an obstacle as they are spawned randomly throughout the map and float around with random direction until they are collided with by a
-                  player. The main difference is that when collided with instead of reducing the player's speed and durability instead they help the player.</p>
-                <p>This was implemented in the Powerup.java file.</p></br>
+                <p>UR_POWER_UP is a new requirement to implement five power-up packs, which could be found floating down the river and be picked up by boats to
+                  improve some of their characteristics.</p>
+                <p>There are 5 unique power-ups implemented into the game, they are Repair (refills a portion of the players lost durability), Stamina (refills a
+                  portion of the players lost stamina), Boost (Gives the player a temporary speed boost), Time (reduces the time taken on the current leg) and
+                  Teleport ( jumps the player forward a set distance). When a boat collides with one of the powerups they collect it and its related effect is
+                  immediately applied to the player's boat. Each powerup has a unique look so that players can tell which powerup they are collecting.</p>
+                <p>Power-ups are implemented as an extension of the MovableObject class and their collision is implemented using the CollisionObject class. In this
+                  way power-ups act as an obstacle as they are spawned randomly throughout the map and float around with random direction until they are collided
+                  with by a player. The main difference is that when collided with instead of reducing the player's speed and durability instead they help the player.</p>
+                <p>This was implemented in the Powerup.java file. This implements the Powerup class from the game architecture.</p></br>
+
+                <h2>Other Changes</h2></br>
+
+                <p>There are some other changes to the game that help to improve the experience overall. These are listed below.</p><ul style="font-size:15px;">
+                  <li>Added a short delay after stopping accelerating as without the delay a player could rapidly press the accelerate button on and off and travel
+                    at close to full speed while barely losing any stamina. This was done in order to prevent a player exploiting this in order to win easily
+                    (UR_TIRED_OVER_TIME).</li>
+                  <li>Created a new, more robust UI system which the old menus were refactored to use, to make them easier to navigate and more responsive to user
+                    input. This was done to improve the user experience overall whilst using the menus (UR_ACCESSIBILITY). This was implemented throughout the UI
+                    Package from the game architecture.</li>
+                  <li>The AI was completely replaced with a more optimised version, and collisions are now looked up against a Quadtree rather than a List, which
+                    resulted in the game using approximately 100x less CPU time and improving performance overall (UR_PERFORMANCE). The AI was also tweaked to make
+                    smarter and more aggressive decisions such that it would play better in general (UR_EXCITEMENT). This was implemented in the AIBoat Class from
+                    the game architecture.</li>
+                  <li>Minor changes including reformatting the code inline with the Google Java Style Guide, reducing the number of public and protected fields,
+                    updating the project to Java 8, unwrapping complicated if statements, and removing unused code.</li></ul>
+                  </br>
+
+                  <h2>Unimplemented Features</h2></br>
+
+                  <p>No features are unimplemented, and all user requirements defined by the client have been fulfilled to an acceptable level.</p></br></br>
 
             </div>
 
@@ -243,7 +283,8 @@
                   and can be picked up by boats. <i>Powerup</i> inherits from the abstract class <i>MoveableObject</i>, since it is supposed to be moving along the lane and
                   is similar to the <i>Obstacle</i> class. Like <i>Obstacle</i>, it also implements the <i>CollisionObject</i> interface, although certain functions within the Interface
                   were changed such that any object colliding with some other object, <i>other</i>, will know the type of <i>other</i> and can react accordingly (ie.
-                  Power-ups won’t damage the boat, obstacles will).</p>
+                  Power-ups won’t damage the boat, obstacles will). Classes <i>SaveManager</i> and <i>Difficulty</i> were also added.
+</p>
                 </br>
                 <img src="images/assessment2/abstract2.png">
               </br></br>
@@ -251,7 +292,7 @@
 
                 <p>The concrete architecture itself has not changed much as an outline of classes, although actual implementation details differ significantly.
                   Much of the superfluous and unnecessary code has been removed or re-implemented in a cleaner or more efficient way.</p>
-                <p>Major changes to the code include:<ol>
+                <p>Major changes to the code include:<ol style="font-size:15px">
                 <li>The addition of the <i>Powerup</i> class which behaves similarly to the <i>Obstacle</i> class but grants bonuses to the boats rather than penalising them.
                   Required for UR_POWER_UP.</li>
                 <li>All <i>CollisionObject</i> instances now have a “value” that the AI uses to decide whether it should steer away from it or towards it, which allows
@@ -284,7 +325,7 @@
                   smaller teams, making it perfect for us and our project. In Scrum, goals are broken down into small tasks which are completed within a set
                   amount of time known as a sprint. We decided to have small week-long sprints as we had official supervised practical sessions once every week.</p>
                 <p>Most of the tools used by Team 12 coincided with our choice. Just like Team 12 we used the following tools for completing the tasks in our project:</p>
-                <ul><li>Google Drive for storing documents and other files</li>
+                <ul style="font-size:15px"><li>Google Drive for storing documents and other files</li>
                 <li>Discord for communication</li>
                 <li>GitHub for source control</li>
                 <li>Google Docs for writing up documents</li></ul>
@@ -318,7 +359,7 @@
                   <div class="row">
                     <div class="column">
                       <img src="images/assessment2/gantt.png" class="board"></br>
-                      <span style="font-size:14px; font-style:italic">Gantt Chart for Assessment2</span>
+                      <span style="font-size:14px; font-style:italic">Gantt Chart for Assessment2 as of 14/02/2021</span>
                     </div>
                   </div></br></br>
 
@@ -408,8 +449,122 @@
                 some sort of numerical error that grows exponentially as it’s used in the code.  Furthermore, it allows us to tweak the gameplay to ensure it is
                 as engaging and enjoyable as possible for the end user.</p></br>
 
-                <h2>Test Results</h2></br>
-                <p>TBA</p></br>
+              <h2>Test Results</h2></br>
+
+              <h3>Unit Tests</h3></br>
+
+              <p>Below is a brief explanation of the purpose of each of the unit tests and their results when run including which parts passed and where there
+                were errors.</p>
+
+              <p><u>These tests relate to functions and mechanics of the game:</u></p>
+
+              <p><b>TestAI</b></br>
+                This test has five components which each test different parts of the AI’s capabilities. The tests cover the AI’s ability to locate other AI boats
+                involved in the race using ray casting, to locate obstacles on the race course using ray casting, to locate powerups on the race course using ray
+                casting, that the AI boats can be hidden when set ho hidden and that the AI boat is set shown when set to shown. The results of these tests are
+                listed below:</p>
+                <p>
+                AI boat locates AI Boat with ray cast: Passed in 0.001 seconds</br>
+                AI boat locates obstacle with ray cast: Passed in 0.002 seconds</br>
+                AI boat locates powerup with ray cast: Passed in 0.002 seconds</br>
+                AI boat is hidden when set to hidden: Passed in 0.001 seconds</br>
+                AI boat is shown when set to shown: Passed in 0.017 seconds</br>
+                All tests passed in 0.025 seconds.</br></p>
+
+                <p><b>TestBoat</b></br>
+                This test has nine components to test that the player's boat is working correctly. The tests cover that the players boats durability cannot exceed
+                a maximum value of 1.0 and cannot fall below a minimum value of 0.0, the boats stamina cannot exceed a maximum value of 1.0 and cannot fall below a
+                minimum value of 0.0. The tests also tests the player’s boats collision with other AI boats, obstacles on the track and the boats collision with
+                the powerups available. The results of these tests are listed below:</p>
+                <p>
+                Boat health has a maximum value of 1.0f: Passed in 0.003 seconds</br>
+                Boat health has a minimum value of 0.0f: Passed in 0.002 seconds</br>
+                Boat stamina has a maximum value of 1.0f: Passed in 0.002 seconds</br>
+                Boat stamina has a minimum value of 0.0f: Passed in 0.001 seconds</br>
+                Boat collides with other boats: Passed in 0.016 seconds</br>
+                Boat collides with obstacles: Passed in 0.003 seconds</br>
+                Boat collides with boost powerup: Passed in 0.001 seconds</br>
+                Boat collides with stamina powerup: Passed in 0.002 seconds</br>
+                Boat collides with repair powerup: Passed in 0.002 seconds</br>
+                All tests passed in 0.033 seconds.</p>
+
+                <p><b>TestCollisionBounds</b></br>
+                This test has three components to test the collision mechanic on items in the game. The three things tested in this unit test are that basic
+                rectangles can collide, that collision of multiple rectangles together functions properly and that collision of rotated rectangles functions as
+                intended. The results of the tests are listed below:</p>
+                <p>
+                AABB collision of rects: Passed in 0.002 seconds</br>
+                AABB collision of multiple rects per collider: Passed in 0.006 seconds</br>
+                AABB collision of rotated collider: Passed in 0.023 seconds</br>
+                All tests passed in 0.031 seconds.</p>
+
+                <p><b>TestDifficulty</b></br>
+                This test has five components to test that the difficulty settings are functioning correctly. These tests are that the target speed of AI boats
+                is set correctly on all three difficulties, that the obstacle count is set correctly on all three difficulties and that the powerup count is set
+                correctly on all three difficulties. The other two tests check that the difficulty can not be incremented past hard difficulty and can not be
+                decremented below easy difficulty. The results of the tests are listed below:<p>
+                <p>
+                Target speed returns properly: Passed in 0.000 seconds</br>
+                Obstacle count returns properly: Passed in 0.001 seconds</br>
+                Power up count returns properly: Passed in 0.006 seconds</br>
+                Difficulty will not increment past hard: Passed in 0.010 seconds</br>
+                Difficulty will not decrement below easy: Passed in 0.001 seconds</br>
+                All tests passed in 0.018 seconds.</p>
+
+                <p><b>TestGameObject</b></br>
+                This test has two components to test that objects in the game can be hidden and shown when required. The test results are listed below:</p>
+                <p>
+                GameObject hidden when requested: Passed in 0.015 seconds</br>
+                GameObject shown when requested: Passed in 0.001 seconds</br>
+                All tests passed in 0.017 seconds.</p>
+
+                <p><b>TestMain</b></br>
+                This test simulates a headless libGDX environment so that textures can be made without actually starting the application which allows us to run
+                tests on these objects without the game running.</p>
+                <p>
+                <b>TestMovableObject</b></br>
+                This test has four components to test that the movement of objects in the game functions correctly. These tests check that objects cannot surpass
+                their maximum speed by normal acceleration and that they cannot surpass their maximum speed by using code to manually increase the speed, it is
+                also tested that an object will move in a straight line at the correct speed when using set values and that an object moves at an angle at the
+                correct speed with set values and a rotation. The results of the tests are listed below:</p>
+                <p>
+                Object cannot naturally accelerate faster than max speed: Passed in 0.001 seconds</br>
+                Object cannot programmatically accelerate faster than max speed: Passed in 0.002 seconds</br>
+                Object moves in a straight line at the right speed: Passed in 0.015 seconds</br>
+                Object moves at an angle at the right speed: Passed in 0.001 seconds</br>
+                All tests passed in 0.020 seconds.</p>
+
+                <p><u>These tests relate to the UI of the game</u></p>
+
+                <p><b>TestButton</b></br>
+                This test has one component that checks that the button can detect when a mouse is hovering over it. The result of the test is listed below:</p>
+                <p>
+                Button hover state works when mouse is over button: Passed in 0.015 seconds</br>
+                Test passed in 0.015 seconds.</p>
+
+                <p><b>TestSwitch</b></br>
+                This test has one component that checks that the switch can detect when a mouse is hovering over it. The result of this test is listed below:</p>
+                <p>
+                Switch hover state works when mouse is over button: Passed in 0.014 seconds</br>
+                Test passed in 0.014 seconds.</p>
+
+
+                <p><u>Test Completeness and Correctness</u></p>
+                <p>All of the unit tests for the game cover mechanics of the game that can be objectively tested with a known result beforehand. This was done as
+                  this is the best way to test that a function/component of the game is working as intended on a mechanical level whilst taking out any human
+                  error and keeping it as unbiased as possible. It is also impossible to test how the game feels as that requires a player to interact with the
+                  game and form an opinion based on their experience.</p></br>
+                <img src="images/assessment2/test.png"></br>
+
+                <p>Test Report can be found <a href="Documentation2/test/index.html" target="_blank">here</a>.<p></br>
+
+                <h3>Gray-Box Testing</h3></br>
+                <p>In addition to automated tests we performed a number of manual tests to further assess the fulfilment of requirements that can only be evaluated
+                  by a player, for example, NFR_SATISFACTION, as well as other aspects of the game such as aesthetic appeal of the game graphics and other UI
+                  related aspects like presence of the tutorial, info display etc. These features cannot be tested by unit testing, since there is no specific
+                  input or expected output that can confirm the correctness and realization of given requirements.</p>
+                  <p>Manual testing results can be found <a href="Documentation2/TestingMat.pdf" target="_blank">here</a>.<p>
+                </br></br>
 
             </div>
 
@@ -441,10 +596,6 @@
                 <img src="images/week8.png" alt="Week 8 Gantt Chart" class="gantt" />
             </div>
 
-
-            <!-- TESTING MATERIAL -->
-
-            <div class="section" id="snaps"></div>
 
 
         </div>

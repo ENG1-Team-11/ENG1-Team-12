@@ -12,9 +12,6 @@ $(window).on('load', function(){
         openInfo(event, 'pics')
     })
 
-    $('#pic-test').on('click', function(){
-        openInfo(event, 'tests')
-    })
 
     $('#linkbtn').on('click', function(){
         openInfo(event, 'links')
