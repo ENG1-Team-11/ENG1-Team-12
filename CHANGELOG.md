@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 </br></hr>
 
+## [2.1.0] - 09-02-2021
+### Changed
+Website
+- Updated content
+
+</br></hr>
+
 ## [2.1.0] - 06-02-2021
 ### Changed
 Codebase:
@@ -21,8 +28,8 @@ Repo:
 ## [2.0.3] - 04-02-2021
 ### Added
 Website
-- updated content
-- added temporary documents
+- Updated content
+- Added temporary documents
 
 </br></hr>
 
