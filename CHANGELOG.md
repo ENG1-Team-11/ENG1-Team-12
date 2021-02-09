@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 </br></hr>
 
 ## [2.1.0] - 09-02-2021
-### Changed
+### Changed:
 Website
 - Updated content
 
