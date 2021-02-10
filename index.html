@@ -315,6 +315,8 @@
                   it should make the game feel smoother if it does perform poorly, somewhat helping mitigate if UR_PERFORMANCE is not met.</li>
                 <li>All non-inner classes have been made public so that they can be used in unit testing, and because exposing classes is generally a lot safer
                   than exposing fields.</li>
+                <li>Collisions have been reworked to use a quadtree for storage of objects and lookup rather than originally as a list, which has served to make some critical
+                  parts of the code up to 100x less CPU time intensive.  This has almost completely eliminated anything blocking UR_PERFORMANCE.</li>
                 </ol></p></br>
 
                 <h3>Methods and Plans:</h3></br>
@@ -424,7 +426,10 @@
                 Unlike the compilation workflow, this should not stop code from entering the branch, but will update a badge on the repository’s README.md file
                 which states whether or not the unit tests (and compilation workflow) are passing.</p>
               <p>Using these two actions, we can ensure that all code in the master branch will compile to a stable and functional build.  Whilst not all builds
-                will be significant enough to be classified as releases, all commits in the master branch should always represent an improvement.</p></br>
+                will be significant enough to be classified as releases, all commits in the master branch should always represent an improvement.</p>
+              <p>Unfortunately, due to the fact that a LibGDX headless runtime has to be created using Mockito, not all unit tests are passing on GitHub Actions.
+                Whilst all tests are passing when the source code is cloned from the repository and run on a dev PC, this is a bug that so far we have been unable
+                to resolve.  <i>(My suspicion is that it’s Git LFS messing up some file pointers because it’s isolated to a few tests)</i></p></br>
 
             </div>
 
